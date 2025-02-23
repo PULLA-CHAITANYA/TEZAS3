@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEZAS 2k25 Symposium</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="icon" href="http://pngimg.com/uploads/netflix/small/netflix_PNG15.png"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <style>
+        /* Loader styles */
+        .tezas-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1000;
+            transition: opacity 0.5s ease;
+        }
+
+        .tezas-logo {
+            color: #E50914;
+            font-size: 4em;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-family: 'Arial Black', sans-serif;
+            text-shadow: 3px 3px 0 rgba(229, 9, 20, 0.5);
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: logoReveal 1.5s ease-out forwards;
+        }
+
+        @keyframes logoReveal {
+            0% {
+                opacity: 0;
+                transform: scale(1.2);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .loader-progress {
+            width: 300px;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loader-progress::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: #E50914;
+            animation: load 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes load {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Main content styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+        }
+
+        .hidden {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .main-content {
+            padding: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- TEZAS Loader -->
+    <div class="tezas-loader" id="loader">
+        <div class="tezas-logo">TEZAS</div>
+        <div class="loader-progress"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content hidden" id="mainContent">
+        <header>
+            <nav class="navbar">
+                <div class="navbar__brand"><a href="index.html">
+                    <img src="src/images/netex.png" alt="logo" class="logo-img"/></a>
+                </div>
+
+                <div class="navbar__nav__items">
+                    <div class="nav__item">
+                        <div class="dropdown__container">
+                            <i class="fas fa-globe"></i>
+                            <select name="languages" id="languagesSelect" class="language__drop__down">
+                                <option value="english" selected style="color: white;">English</option>
+                                <option value="hindi" style="color: white;">हिन्दी</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="nav__item">
+                        <button class="signin__button">Sign in</button>
+                    </div>
+                </div>
+            </nav>
+            <video autoplay="" loop="" muted="" class="hello_video">
+                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4"/>
+            </video>
+        </header>
+
+        <main>
+            <section class="instructions bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] max-w-full mx-auto flex justify-center items-center">
+                <div class="countdown flex flex-wrap justify-center gap-7">
+                    <div class="time-section" id="days">
+                        <div class="time-group flex gap-2">
+                            <div class="time-segment">
+                                <div class="segment-display">
+                                    <div class="segment-display__top"></div>
+                                    <div class="segment-display__bottom"></div>
+                                    <div class="segment-overlay">
+                                        <div class="segment-overlay__top"></div>
+                                        <div class="segment-overlay__bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time-segment">
+                                <div class="segment-display">
+                                    <div class="segment-display__top"></div>
+                                    <div class="segment-display__bottom"></div>
+                                    <div class="segment-overlay">
+                                        <div class="segment-overlay__top"></div>
+                                        <div class="segment-overlay__bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-center mt-2">Days</p>
+                    </div>
+
+                    <div class="time-section" id="hours">
+                        <div class="time-group flex gap-2">
+                            <div class="time-segment">
+                                <div class="segment-display">
+                                    <div class="segment-display__top"></div>
+                                    <div class="segment-display__bottom"></div>
+                                    <div class="segment-overlay">
+                                        <div class="segment-overlay__top"></div>
+                                        <div class="segment-overlay__bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time-segment">
+                                <div class="segment-display">
+                                    <div class="segment-display__top"></div>
+                                    <div class="segment-display__bottom"></div>
+                                    <div class="segment-overlay">
+                                        <div class="segment-overlay__top"></div>
+                                        <div class="segment-overlay__bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-center mt-2">Hours</p>
+                    </div>
+
+                    <div class="time-section" id="minutes">
+                        <div class="time-group flex gap-2">
+                            <div class="time-segment">
+                                <div class="segment-display">
+                                    <div class="segment-display__top"></div>
+                                    <div class="segment-display__bottom"></div>
+                                    <div class="segment-overlay">
+                                        <div class="segment-overlay__top"></div>
+                                        <div class="segment-overlay__bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time-segment">
+                                <div class="segment-display">
+                                    <div class="segment-display__top"></div>
+                                    <div class="segment-display__bottom"></div>
+                                    <div class="segment-overlay">
+                                        <div class="segment-overlay__top"></div>
+                                        <div class="segment-overlay__bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-center mt-2">Minutes</p>
+                    </div>
+
+                    <div class="time-section" id="seconds">
+                        <div class="time-group flex gap-2">
+                            <div class="time-segment">
+                                <div class="segment-display">
+                                    <div class="segment-display__top"></div>
+                                    <div class="segment-display__bottom"></div>
+                                    <div class="segment-overlay">
+                                        <div class="segment-overlay__top"></div>
+                                        <div class="segment-overlay__bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time-segment">
+                                <div class="segment-display">
+                                    <div class="segment-display__top"></div>
+                                    <div class="segment-display__bottom"></div>
+                                    <div class="segment-overlay">
+                                        <div class="segment-overlay__top"></div>
+                                        <div class="segment-overlay__bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-center mt-2">Seconds</p>
+                    </div>
+                </div>
+
+                <script>
+                    // Set target date to March 17, 2025 at 12:00 AM
+                    const targetDate = new Date('2025-03-17T00:00:00');
+
+                    function getTimeSegmentElements(segmentElement) {
+                        return {
+                            segmentDisplayTop: segmentElement.querySelector('.segment-display__top'),
+                            segmentDisplayBottom: segmentElement.querySelector('.segment-display__bottom'),
+                            segmentOverlay: segmentElement.querySelector('.segment-overlay'),
+                            segmentOverlayTop: segmentElement.querySelector('.segment-overlay__top'),
+                            segmentOverlayBottom: segmentElement.querySelector('.segment-overlay__bottom')
+                        };
+                    }
+
+                    function updateSegmentValues(displayElement, overlayElement, value) {
+                        displayElement.textContent = value;
+                        overlayElement.textContent = value;
+                    }
+
+                    function updateTimeSegment(segmentElement, timeValue) {
+                        const elements = getTimeSegmentElements(segmentElement);
+                        if (parseInt(elements.segmentDisplayTop.textContent, 10) === timeValue) return;
+
+                        elements.segmentOverlay.classList.add('flip');
+                        updateSegmentValues(elements.segmentDisplayTop, elements.segmentOverlayBottom, timeValue);
+
+                        const finishAnimation = () => {
+                            elements.segmentOverlay.classList.remove('flip');
+                            updateSegmentValues(elements.segmentDisplayBottom, elements.segmentOverlayTop, timeValue);
+                            elements.segmentOverlay.removeEventListener('animationend', finishAnimation);
+                        };
+
+                        elements.segmentOverlay.addEventListener('animationend', finishAnimation);
+                    }
+
+                    function updateTimeSection(sectionID, timeValue) {
+                        const section = document.getElementById(sectionID);
+                        const segments = section.querySelectorAll('.time-segment');
+                        updateTimeSegment(segments[0], Math.floor(timeValue / 10));
+                        updateTimeSegment(segments[1], timeValue % 10);
+                    }
+
+                    function getTimeRemaining(target) {
+                        const total = target - Date.now();
+                        const seconds = Math.floor((total / 1000) % 60);
+                        const minutes = Math.floor((total / 1000 / 60) % 60);
+                        const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+                        const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+                        return { days, hours, minutes, seconds, total };
+                    }
+
+                    function updateAllSegments() {
+                        const t = getTimeRemaining(targetDate);
+                        updateTimeSection('days', t.days);
+                        updateTimeSection('hours', t.hours);
+                        updateTimeSection('minutes', t.minutes);
+                        updateTimeSection('seconds', t.seconds);
+                        return t.total <= 0;
+                    }
+
+                    const countdownTimer = setInterval(() => {
+                        if (updateAllSegments()) clearInterval(countdownTimer);
+                    }, 1000);
+
+                    // Initial update
+                    updateAllSegments();
+                </script>
+            </section>
+
+            <section class="events py-12 px-4 md:px-6">
+                <div class="mx-auto text-center">
+                    <h1 class="glitch" data-text="EVENTS">EVENTS</h1>
+                </div>
+            </section>
+
+            <section class="features__container">
+                <div class="feature">
+                    <div class="feature__details">
+                        <h3 class="feature__title">GET SET CODE</h3>
+                        <h5 class="feature__sub__title">
+                            Get Set Code is a fast-paced coding showdown with quizzes, puzzles, debugging, and challenges—think fast, code faster, and have fun!
+                        </h5>
+                        <br>
+                        <button class="primary__button">
+                            OPEN EVENT <i class="fal fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="feature__image__container">
+                        <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
+                        <div class="feature__backgroud__video__container">
+                            <video autoplay="" loop="" muted="" class="feature__backgroud__video">
+                                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more features as needed -->
+            </section>
+
+            <section class="FAQ__list__container">
+                <h1 class="FAQ__heading">Frequently Asked Questions</h1>
+                <div class="FAQ__list">
+                    <div class="FAQ__accordian">
+                        <button class="FAQ__title">
+                            What is TEZAS 2k25?<i class="fal fa-plus"></i>
+                        </button>
+                        <div class="FAQ__visible">
+                            <p>
+                                TEZAS 2k25 is an exciting tech-driven competition conducted by the 
+                                Department of Artificial Intelligence and Data Science of RMK College of Engineering and Technology.
+                                It features coding challenges, AI quizzes, problem-solving rounds, and thrilling escape room experiences, 
+                                designed to test speed, strategy, and creativity in a fun and engaging way!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="FAQ__accordian">
+                        <button class="FAQ__title">
+                            Is there any participation fee?<i class="fal fa-plus"></i>
+                        </button>
+                        <div class="FAQ__visible">
+                            <p>
+                                No, there is no participation fee! The event is completely free for all participants.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="FAQ__accordian">
+                        <button class="FAQ__title">
+                            Will food be provided?<i class="fal fa-plus"></i>
+                        </button>
+                        <div class="FAQ__visible">
+                            <p>
+                                Yes, food will be provided for all participants.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="FAQ__accordian">
+                        <button class="FAQ__title">
+                            Is there a bus facility?<i class="fal fa-plus"></i>
+                        </button>
+                        <div class="FAQ__visible">
+                            <p>
+                                Yes, participants are asked to use the college bus facility for convenient transportation to and from the event.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="Contact-Us">
+            <div class="footer-container">
+                <div id="contact" class="footer-section contact">
+                    <h2>Student Coordinators</h2>
+                    <p style='margin-bottom: 0px;'>Aravindan P B</p>
+                    <div class="phone-no">
+                        <p><a href="tel:+91 6369890793">+91 6369890793</a></p>
+                    </div>
+                    <br>
+                    <p style='margin-bottom: 0px;'>Aswini C S</p>
+                    <div class="phone-no">
+                        <p><a href="tel:+91 9500561304">+91 9500561304</a></p>
+                    </div>
+                </div>
+                <div class="footer-section socials">
+                    <h2>Follow Us On</h2>
+                    <a href="https://www.instagram.com/airo_4.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                        <img src="src/images/insta-icon.png" alt="Instagram" width="40" height="40">
+                    </a>
+                    <a href="https://www.instagram.com/airo_4.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                        <img src="src/images/insta-icon.png" alt="Instagram" width="40" height="40">
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="src/index.js"></script>
+        <script>
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    // Fade out loader
+                    document.getElementById('loader').style.opacity = '0';
+                    // Show main content
+                    document.getElementById('mainContent').classList.remove('hidden');
+                    document.getElementById('mainContent').classList.add('visible');
+                    
+                    // Remove loader after transition
+                    setTimeout(function() {
+                        document.getElementById('loader').remove();
+                    }, 500);
+                }, 2500); // Matches loader animation duration
+            });
+        </script>
+    </div>
+</body>
+</html>
