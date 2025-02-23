@@ -32,14 +32,12 @@ body {
   height: 100%;
 }
 
-/* Logo styling */
 .logo-img {
   width: 120px;
   height: 35px;
   transition: width 0.3s ease, height 0.3s ease;
 }
 
-/* Responsive adjustments for mobile */
 @media (max-width: 767.98px) {
   .logo-img {
     width: 60px;
@@ -655,7 +653,10 @@ body {
   100% { transform: rotateX(0deg); }
 }
 
+<<<<<<< HEAD
 /* new foooter */
+=======
+>>>>>>> a18cb3a (Updated index.html, styles, and added new files)
 footer {
   background-color: #222;
   color: #fff;
@@ -671,7 +672,6 @@ footer {
   padding: 0 20px;
 }
 
-/* Custom hover animations */
 .nav-button {
   position: relative;
   padding: 0.5rem 1rem;
@@ -687,7 +687,6 @@ footer {
   color: #ff6b6b;
 }
 
-/* Underline animation */
 .nav-button::after {
   content: '';
   position: absolute;
@@ -703,12 +702,10 @@ footer {
   width: 100%;
 }
 
-/* Scale animation */
 .nav-button:hover {
   transform: scale(1.1);
 }
 
-/* Background color animation */
 .nav-button:hover {
   background: rgba(255, 107, 107, 0.1);
   border-radius: 0.5rem;
@@ -825,7 +822,6 @@ footer {
   100% { transform: rotateX(0deg); }
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   .countdown {
     gap: 15px;
@@ -871,7 +867,6 @@ footer {
   }
 }
 
-/* Glass effect overlay */
 .glass-overlay {
   position: absolute;
   width: 100%;
@@ -955,13 +950,11 @@ footer {
   100% { clip-path: inset(182% 0%); transform: skew(0.22deg); }
 }
 
-/* Ensure the ratio container takes full width and height */
 .ratio {
   margin: 0;
   padding: 0;
 }
 
-/* Events Section */
 .events {
   padding: 50px 20px;
   text-align: center;

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html>
   <head>
     <meta name="description" content="Hello this is my first web page!." />
@@ -20,9 +19,9 @@
   <body>
     <header>
       <nav class="navbar">
-        <div class="navbar__brand"><a href="index.html">
-          <img src="src/images/netex.png" alt="logo" class="logo-img"/></a>
-        </div>
+        <div class="navbar__brand"><a href="main.html">
+          <img src="src/images/netex.png" alt="logo" class="logo-img"/>
+        </a></div>
 
         <div class="navbar__nav__items">
           <div class="nav__item">
@@ -154,7 +153,6 @@
         </div>
   
         <script>
-          // Set target date to March 17, 2025 at 12:00 AM
           const targetDate = new Date('2025-03-17T00:00:00');
   
           function getTimeSegmentElements(segmentElement) {
@@ -218,7 +216,6 @@
             if (updateAllSegments()) clearInterval(countdownTimer);
           }, 1000);
   
-          // Initial update
           updateAllSegments();
         </script>
       </section>
@@ -398,126 +395,10 @@
               </p>
             </div>
           </div>
-=======
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loading...</title>
-  <link rel="stylesheet" href="src/styles2.css" />
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background-color: #000;
-    }
-    #container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-    }
-    .netflixintro {
-      width: 300px;
-      height: 300px;
-      position: relative;
-      background-color: #000;
-    }
-    .fallback-loader {
-      width: 100px;
-      height: 100px;
-      background-color: red;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation: spin 2s linear infinite;
-    }
-    @keyframes spin {
-      0% { transform: translate(-50%, -50%) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-  </style>
-</head>
-<body>
-  <div id="container">
-    <div class="netflixintro" data-letter="T">
-      <div class="helper-1">
-        <div class="effect-brush">
-          <span class="fur-1"></span>
-          <span class="fur-2"></span>
-          <span class="fur-3"></span>
-          <span class="fur-4"></span>
-          <span class="fur-5"></span>
-          <span class="fur-6"></span>
-          <span class="fur-7"></span>
-          <span class="fur-8"></span>
-          <span class="fur-9"></span>
-          <span class="fur-10"></span>
         </div>
-        <div class="effect-lumieres">
-          <span class="lamp-1"></span>
-          <span class="lamp-2"></span>
-          <span class="lamp-3"></span>
-          <span class="lamp-4"></span>
-          <span class="lamp-5"></span>
-          <span class="lamp-6"></span>
-          <span class="lamp-7"></span>
-          <span class="lamp-8"></span>
-        </div>
-      </div>
-      <div class="helper-2">
-        <div class="effect-brush">
-          <span class="fur-1"></span>
-          <span class="fur-2"></span>
-          <span class="fur-3"></span>
-          <span class="fur-4"></span>
-          <span class="fur-5"></span>
-          <span class="fur-6"></span>
-          <span class="fur-7"></span>
-          <span class="fur-8"></span>
-          <span class="fur-9"></span>
-          <span class="fur-10"></span>
->>>>>>> a18cb3a (Updated index.html, styles, and added new files)
-        </div>
-      </div>
-      <div class="helper-3">
-        <div class="effect-brush">
-          <span class="fur-1"></span>
-          <span class="fur-2"></span>
-          <span class="fur-3"></span>
-          <span class="fur-4"></span>
-          <span class="fur-5"></span>
-          <span class="fur-6"></span>
-          <span class="fur-7"></span>
-          <span class="fur-8"></span>
-          <span class="fur-9"></span>
-          <span class="fur-10"></span>
-        </div>
-      </div>
-      <div class="helper-4">
-        <div class="effect-brush">
-          <span class="fur-1"></span>
-          <span class="fur-2"></span>
-          <span class="fur-3"></span>
-          <span class="fur-4"></span>
-          <span class="fur-5"></span>
-          <span class="fur-6"></span>
-          <span class="fur-7"></span>
-          <span class="fur-8"></span>
-          <span class="fur-9"></span>
-          <span class="fur-10"></span>
-        </div>
-      </div>
-      <div class="fallback-loader"></div>
-    </div>
-  </div>
+      </section>
+    </main>
 
-<<<<<<< HEAD
     <footer id="Contact-Us">
       <div class="footer-container">
         <div id="contact" class="footer-section contact">
@@ -543,25 +424,3 @@
     <script src="src/index.js"></script>
   </body>
 </html>
-=======
-  <script>
-    console.log("Loader page loaded");
-    if (document.querySelector('.netflixintro')) {
-      console.log("Netflixintro element found");
-    } else {
-      console.error("Netflixintro element NOT found");
-    }
-    if (getComputedStyle(document.querySelector('.netflixintro')).animationName === 'zoom-in') {
-      console.log("Zoom-in animation applied from styles2.css");
-    } else {
-      console.error("Zoom-in animation NOT applied - Check src/styles2.css");
-    }
-
-    setTimeout(() => {
-      console.log("Redirecting to main.html");
-      window.location.href = "main.html";
-    }, 4000);
-  </script>
-</body>
-</html>
->>>>>>> a18cb3a (Updated index.html, styles, and added new files)
