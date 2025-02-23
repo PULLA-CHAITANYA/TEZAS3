@@ -13,18 +13,11 @@
       height: 100%;
       overflow: hidden;
     }
-    /* Fallback styling for netflixintro if JS isn’t defining it */
-    netflixintro {
-      display: block;
-      width: 300px;
-      height: 300px;
-      position: relative;
-    }
   </style>
 </head>
 <body>
   <div id="container">
-    <netflixintro letter="T">
+    <div class="netflixintro" data-letter="T">
       <div class="helper-1">
         <div class="effect-brush">
           <span class="fur-1"></span>
@@ -91,18 +84,15 @@
           <span class="fur-10"></span>
         </div>
       </div>
-    </netflixintro>
+    </div>
   </div>
 
   <script>
-    // Log to check if script runs
     console.log("Loader script running...");
-
-    // Redirect to index.html after animation
     setTimeout(() => {
       console.log("Redirecting to index.html");
       window.location.href = "index.html";
-    }, 4000); // 4 seconds (3.5s zoom-in + 0.5s delay)
+    }, 4000);
   </script>
 </body>
 </html>
