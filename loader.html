@@ -6,13 +6,19 @@
   <title>Loading...</title>
   <link rel="stylesheet" href="src/styles2.css" />
   <style>
-    /* Inline CSS to ensure full-screen centering */
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
+    }
+    /* Fallback styling for netflixintro if JS isn’t defining it */
+    netflixintro {
+      display: block;
+      width: 300px;
+      height: 300px;
+      position: relative;
     }
   </style>
 </head>
@@ -89,10 +95,14 @@
   </div>
 
   <script>
+    // Log to check if script runs
+    console.log("Loader script running...");
+
     // Redirect to index.html after animation
     setTimeout(() => {
+      console.log("Redirecting to index.html");
       window.location.href = "index.html";
-    }, 4000); // 4 seconds (matches 3.5s zoom-in + 0.5s delay)
+    }, 4000); // 4 seconds (3.5s zoom-in + 0.5s delay)
   </script>
 </body>
 </html>
